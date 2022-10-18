@@ -10,13 +10,13 @@ const people = document.querySelector('#people')
 const tip = document.querySelector('#tip')
 
 const showBill = () => {
-    error.textContent= ''
-    costInfo.style= 'none'
 
-    if(price.value == '' || people.value == '' || tip.value == 0 ) {
-        error.textContent= 'Podaj prawidłowe wartości'
-    } else {
+    if(price.value > 0 && people.value >= 1 && tip.value > 0 ) {
+        error.textContent= ''
         countBill()
+    } else {
+        costInfo.style= 'none'
+        error.textContent= 'Podaj prawidłowe wartości'
     }
 }
 
